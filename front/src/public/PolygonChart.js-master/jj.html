@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>PolygonChart.js</title>
+</head>
+
+<body>
+  <main class="main">
+    <div id="polygon-chart" class="polygon-chart"></div>
+  </main>
+</body>
+
+
+
+
+<script src="./polygonchart.umd.js"></script>
+
+<script type="text/javascript">
+  let el = document.getElementById("polygon-chart");
+
+  let chart = new window.PolygonChart({
+    target: el,
+    radius: 200,
+    data: {
+      data: [
+        [
+          0.9121703,
+          0.6347141,
+          0.7224417,
+          0.1237715,
+          0.5747144,
+        ]
+      ],
+      sides: 6,
+      tooltips: {
+        roundTo: 2,
+        percentage: true,
+      },
+      colors: {
+        normal: {
+            //ligne
+          polygonStroke: "#D8AB1F",
+          // deu lettre de fin transparent
+          polygonFill: "#16E8D64f",
+          pointStroke: "transparent",
+          //point
+          pointFill: "#D8AB1F",
+        },
+        onHover: {
+          polygonStroke: "#A54AE9",
+          polygonFill: "rgba(0,0,0,0.3)",
+          pointStroke: "#A54AE9",
+          pointFill: "#fff",
+        },
+      },
+    },
+    polygon: {
+      colors: {
+        normal: {
+            //full
+          fill: "#004A48",
+          //file
+          stroke: "#2ED1CC",
+        },
+        onHover: {
+          fill: "#231E2C",
+          stroke: "#993DE0",
+        }
+      }
+    },
+    levels: {
+      count: 10,
+      labels: {
+        enabled: true,
+        position: {
+          spline: 1,
+          quadrant: 0,
+        },
+        colors: {
+          normal: "#D8AB1F",
+          onHover: "#A54AE9",
+        },
+      },
+    },
+  });
+  chart.init();
+</script>
+
+</html>

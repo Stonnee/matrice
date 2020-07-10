@@ -1,0 +1,30 @@
+<a routerLink="/matrice/home"><img src="https://img.icons8.com/cotton/64/000000/circled-left-2.png"/></a>
+<div class="box">
+
+
+<ul #wat id="wat" name="wat" *ngFor="let n of note">
+    <li (click)="aff()" *ngIf="!isPut; else elseBlock">  {{n.name}} : {{n.content}}  </li>
+    <ng-template #elseBlock>
+        <form  name="putNote" (ngSubmit)="onPut(P)" #P="ngForm">
+            <button (click)="suppr(n)">x</button><button type="submit">✓</button>
+            <input [(ngModel)]="n.name" name="name" type="text" value="{{n.name}}" ngModel required><br>
+            <input [(ngModel)]="n.content" name="content" type="text" value="{{n.content}}" ngModel required>
+            <input [(ngModel)]="n.id_note" type="hidden" name="id" id="id">
+        </form>
+    </ng-template>   
+</ul>
+
+<br><br><br>
+
+<button #wow name="wow" id="wow" *ngIf="!isNew" (click)="Ttrigger()" >+</button>
+
+<form *ngIf="isNew" name="formNote" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<button (click)="Ftrigger()">X</button><input #name type="text" name="name" id="name" ngModel required>
+<br>
+<textarea #content name="content" id="content" rows = "4" cols = "80" ngModel required></textarea>
+<input #id type="hidden" name="id" id="id">
+<button class="searchButton" type="submit">submit</button>
+</form>
+
+</div>
+

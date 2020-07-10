@@ -1,0 +1,19 @@
+<p>new-stat works!</p>
+
+ <form name="newStatsF" class="form" (ngSubmit)="onSubmit(new)" #new="ngForm">
+    <h1 style="color: white;">Votre nouvelle table</h1>
+    <div class="form-group">
+       <label for="mail">  </label>
+         <input #name type="text" id="name" name="name" placeholder="nom" class="form-control" ngModel required/>
+      </div>
+
+       <div class="form-group">
+          <label for="pwd"> </label>
+          <input #color type="text"id="color"name="color"placeholder="couleur"class="form-control" ngModel required/>
+        </div>
+
+
+
+        <button class="btn btn-success" type="submit" >OK</button>
+
+  </form> 
